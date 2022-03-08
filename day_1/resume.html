@@ -5,6 +5,43 @@
 	<title>Title</title>
 </head>
 <body>
+<button onclick="document.body.style.backgroundColor = 'red'">Changer la couleur</button>
+<script src="resume.js"></script>
+<script>
+	document.write('a : ' + a + ' b : ' + b + ' c : ' + c + '<br>');
+    document.write(`<p>a : ${a} b : ${b} c : ${c}</p>`);
+    console.log(a, b, c);
 
+    const hello = (a === "10") ? "Hello" : "Olleh";
+
+    let h1;
+    if (a == "10") {
+        h1 = "Hello";
+    } else {
+        h1 = 'Olleh';
+    }
+
+    document.write(`<p>${hello}</p>`);
+
+    function f(titi, toto = 8) {
+        console.log(titi, toto);
+    }
+    f("titi");
+
+    let op = 10;
+    // op = op + 2
+    op += 2;
+    // op = op - 3
+    op -= 3;
+
+    document.write(eval("10"));
+    document.write(typeof parseFloat("10"));
+
+    document.write(`<p>${op}</p>`);
+    document.write(`<p>${++op}</p>`);
+    document.write(`<p>${op}</p>`);
+    let lettre = "A"
+    document.write((lettre >= "a" && lettre <= "z") ? "minuscule" : "autre")
+</script>
 </body>
 </html>
