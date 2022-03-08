@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+    // for (let i = 0; i < 20; i++) {
+    //     if (i % 3 === 0) {
+    //         continue;
+    //     }
+    //     if (i === 17) {
+    //         break;
+    //     }
+    //     document.write(`<h4>${i}</h4>`);
+    // }
+
+    const tab1 = ["sam", "herve", "sab", "anto"];
+
+    // for (let i = 0; i < tab1.length; i++) {
+    // 	document.writeln(tab1[i]);
+    // }
+
+    // for (const prenom of tab1) {
+    //     document.writeln(prenom);
+    // }
+
+    const p1 = {
+        nom: "michaux",
+        prenom: "samuel",
+        age: 20,
+        hobbies: ["moto", "informatique", "dormir"],
+        femme: false
+    };
+
+    document.writeln(p1.prenom);
+
+    for (const k in p1) {
+        document.writeln(`Key : ${k} - Value : ${p1[k]}<br>`);
+    }
+</script>
+</body>
+</html>

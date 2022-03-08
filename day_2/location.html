@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<div class="container">
+	<ul id="liste"></ul>
+</div>
+<button onclick="history.back()">Précédent</button>
+<script>
+    console.log(location);
+    // location.href = 'https://google.fr';
+    const liste = document.getElementById('liste');
+    // debugger;
+    liste.innerHTML = `
+			<li>Protocol : ${location.protocol}</li>
+			<li>Hostname : ${location.hostname}</li>
+			<li>Port : ${location.port}</li>
+			<li>Pathname : ${location.pathname}</li>`;
+
+    console.log(history);
+
+    // const li = document.createElement('li');
+    // li.innerHTML = "Protocol : " + location.protocol;
+    // li.className = "test sam";
+    // liste.append(li);
+
+</script>
+</body>
+</html>

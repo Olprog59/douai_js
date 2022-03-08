@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="">
+	<div>
+		<input name="cgv" onclick="checkbox(this);" type="checkbox">
+	</div>
+	<div>
+		<input name="civ" type="radio" value="m">
+		<input name="civ" type="radio" value="mme">
+	</div>
+	<div>
+		<input name="name" type="text">
+	</div>
+	<div>
+		<select name="ville" onchange="select(this)">
+			<option value="fr">France</option>
+			<option selected value="be">Belgique</option>
+			<option value="ch">Suisse</option>
+		</select>
+	</div>
+</form>
+
+<script>
+    function checkbox(input) {
+        console.log(input.checked);
+        console.log(input.defaultChecked);
+        console.log(input.name);
+        console.log(input.value);
+    }
+
+    function select(s) {
+        console.log(s.value);
+        console.log(s.selectedIndex);
+        console.log(s.options[s.selectedIndex]);
+    }
+
+    /*
+        function inputName(event) {
+	        console.log(event.target.value);
+	    }
+     */
+    /*
+		const inputName = function (event) {
+			console.log(event.target.value);
+		}
+	*/
+    const inputName = (event) => {
+        console.log(event.target.value);
+    }
+
+    // (type de l'event, callback)
+    document.forms[0].name.addEventListener('keyup', inputName);
+
+    // test();
+    //
+    // function test(){
+    //     console.log("test");
+    // }
+    //
+    // var varTest = "test variable";
+    // console.log(varTest);
+</script>
+</body>
+</html>
