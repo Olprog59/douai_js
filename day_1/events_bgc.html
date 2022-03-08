@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<button onclick="changeBgc('black');">Noir</button>
+<button onclick="changeBgc('yellow');">Jaune</button>
+<button onclick="changeBgc('pink');">Rose</button>
+
+<form action="" name="formulaire_test">
+	<input type="text"
+	       name="prenom"
+	       id="prenom"
+	       onfocus="f(this.form);"
+	       onblur="f1(this.form);"
+	       onkeyup="texte(this.form);"
+	       onmouseenter="mouseHover();"
+	       onmouseleave="mouseLeave();"
+	>
+	<output name="out"></output>
+</form>
+
+<script>
+	function changeBgc(color){
+        document.body.style.backgroundColor = color;
+	}
+	function f(form) {
+        form.prenom.style.backgroundColor = 'red';
+	}
+	function f1(form) {
+        form.prenom.style.backgroundColor = 'white';
+	}
+
+    function texte(form) {
+        const val = form.prenom.value;
+        form.out.innerText = val;
+    }
+
+    function mouseHover() {
+	    document
+		    .formulaire_test
+		    .prenom
+		    .style
+		    .backgroundColor = 'yellow';
+    }
+
+    function mouseLeave() {
+        document.forms[0].prenom
+            .style
+            .backgroundColor = 'white';
+    }
+</script>
+</body>
+</html>

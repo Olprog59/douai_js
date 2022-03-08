@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>Test des opérateurs élémentaires</h1>
+<hr>
+<p>Entrez vos données</p>
+<form action="">
+	<div>
+		<label for="r1">Premier nombre réel R1 =&nbsp;</label>
+		<input type="text" name="r1" id="r1" value="12.5" >
+	</div>
+	<div>
+		<input type="button"
+		       name="calcul"
+		       value="Calcul"
+		       onclick="calculer(this.form)">
+	</div>
+	<div>
+		<label for="r2">Premier nombre réel R2 =&nbsp;</label>
+		<input type="text" name="r2" id="r2" value="24.12">
+	</div>
+	<p>Résultats</p>
+	<textarea name="res" cols="50" rows="5"></textarea>
+</form>
+<script>
+    function calculer(form) {
+		let r1 = parseFloat(form.r1.value);
+		const r2 = parseFloat(form.r2.value);
+
+        let c = r1;
+        form.res.value = toStr("+", r1 += r2); // r1 = r1 + r2
+	    r1 = c;
+        form.res.value += toStr("*", r1 *= r2); // r1 = r1 * r2
+	    r1 = c;
+        form.res.value += toStr("/", r1 /= r2); // r1 = r1 / r2
+	    r1 = c;
+        form.res.value += toStr("%", r1 %= r2); // r1 = r1 % r2
+    }
+
+    function toStr(op, res) {
+	    // return "Après l'opération r1 " + op + "= r2, r1 a pour valeur " + res;
+	    return `Après l'opération r1 ${op}= r2, r1 a pour valeur ${res}\n`;
+    }
+</script>
+</body>
+</html>

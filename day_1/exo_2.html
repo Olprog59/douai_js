@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="">
+	<input type="text" name="op">
+	<button type="button" onclick="calcul(this.form);">Calculez</button>
+	<input type="text" name="res">
+</form>
+
+<script>
+    function calcul(formulaire) {
+        formulaire.res.value = eval(formulaire.op.value);
+    }
+
+    let age = 18;
+
+    let message = (age > 17) ? "majeur" : "mineur";
+/*    if (age > 17) {
+        message = "majeur";
+    }else {
+        message = "mineur";
+    }*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="">
+	<div>
+		<label for="nom">Entrez votre nom</label>
+		<input type="text" name="nom" id="nom">
+	</div>
+	<div>
+		<label for="email">Entrez votre email</label>
+		<input type="email" name="email" id="email">
+	</div>
+	<div>
+		<span>Connaissez vous mediaforma ?</span>
+		<label for="yes">Oui</label>
+		<input type="radio" name="question" id="yes" value="yes">
+		<label for="no">Non</label>
+		<input type="radio" name="question" id="no" value="no">
+	</div>
+
+	<div>
+		<button type="submit">Envoyer</button>
+		<button type="reset">Annuler</button>
+		<button type="button" onclick="toUpper(this.form);">Majuscules</button>
+	</div>
+
+</form>
+
+<script>
+	function toUpper(formulaire) {
+		// formulaire
+		// 	.email
+		// 	.style
+		// 	.textTransform = "uppercase";
+		formulaire.email.value =
+			formulaire.email.value.toUpperCase();
+    }
+</script>
+</body>
+</html>
