@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>Bienvenue dansl'exercice du jour 3</h1>
+<hr>
+<form action="">
+	<div>
+		<input autofocus name="todo" type="text">
+		<button onclick="ajouterTache(this.form)" type="button">Ajouter la tâche</button>
+	</div>
+</form>
+
+<div id="todoList"></div>
+
+<script>
+    function ajouterTache(form) {
+        const val = form.todo.value;
+        document.getElementById("todoList").innerHTML += `<p>${val}</p>`;
+        form.todo.value = '';
+        form.todo.focus();
+    }
+</script>
+</body>
+</html>
