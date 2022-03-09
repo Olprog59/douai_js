@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+
+    print(new Date());
+    print(new Date().getDay());
+    print(new Date().getMonth());
+    print(new Date().getDate());
+    // 09/07/1981
+    const age = new Date() - new Date(1996, 11, 1);
+    print(age);
+    print(Math.floor(milliToYear(age)));
+
+    function milliToYear(milli) {
+        const oneYear = 1000 * 60 * 60 * 24 * 365.25;
+        return milli / oneYear;
+    }
+
+    function print(...str) {
+        console.log(str);
+        document.writeln(str + "<br>");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	let texte =
+		'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, doloremque facilis ipsam laboriosam magni maiores natus non numquam obcaecati omnis, ratione rerum? Labore nulla obcaecati officiis recusandae repellat similique soluta.';
+
+	document.writeln(texte.length.toString() + "<br>");
+    document.writeln(texte.substring(6,11) + '<br>');
+    document.writeln(texte.charAt(6) + '<br>');
+    // document.writeln(texte.toUpperCase() + '<br>');
+    // document.writeln(texte.toLowerCase() + '<br>');
+
+	const sp = texte.split(" ");
+    for (let i = 0; i < sp.length; i++) {
+	    sp[i] = sp[i].charAt(0).toUpperCase() + sp[i].substring(1);
+    }
+    texte = sp.join(" ");
+    document.writeln(texte + '<br>');
+</script>
+</body>
+</html>

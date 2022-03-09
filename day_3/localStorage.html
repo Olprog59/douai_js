@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<script>
+	document.writeln(localStorage.length + '<br>');
+	// localStorage.setItem('title', 'Test Local Storage');
+	localStorage.setItem('age', "40");
+	const prenoms = ["sam", "imane", "thomas", "laurent"];
+    localStorage.setItem('prenoms', JSON.stringify(prenoms));
+
+    let listPrenom = localStorage.getItem('prenoms');
+    listPrenom = JSON.parse(listPrenom);
+    document.write(typeof listPrenom);
+    // localStorage.clear();
+
+	sessionStorage.setItem("sessionID", "je suis une session storage");
+</script>
+</body>
+</html>

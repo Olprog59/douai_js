@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+<img src="https://picsum.photos/3000" alt="">
+
+<a href="https://google.fr">Google</a>
+
+<script>
+    function chargement() {
+        document.writeln("Document chargée : <a href=\"https://google.fr\">Google</a>");
+    }
+
+    function dechargement() {
+        alert('veux-tu quitter le site ?');
+    }
+
+    function redimenssionner() {
+	    document.writeln(document.body.offsetWidth + ' ' + window.innerHeight);
+    }
+    window.addEventListener('resize', redimenssionner);
+</script>
+</body>
+</html>
