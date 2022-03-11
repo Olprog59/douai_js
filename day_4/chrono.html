@@ -61,6 +61,22 @@
             padding: 5px 0;
 			font-size: 1.2rem;
 		}
+		select#choiceMilli {
+			border: none;
+            background-color: #95c6fd;
+			height: 40px;
+			font-size: 1.2rem;
+			border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+			outline: none;
+		}
+
+		main .btns {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	</style>
 </head>
 <body>
@@ -70,11 +86,22 @@
 		<span>00</span> .
 		<span>000</span>
 	</p>
-	<div>
+	<div class="btns">
 		<button id="btn-stop">Stop</button>
+		<select name="choiceMilli" id="choiceMilli">
+			<option value="63">Rafraichissement bon</option>
+			<option value="100" selected>Rafraichissement moyen</option>
+			<option value="500">Rafraichissement lent</option>
+		</select>
 		<button id="btn-start">Start</button>
 	</div>
 	<div class="liste"></div>
+	<div class="shortcuts">
+		<ul>
+			<li><code>space</code> : Start or Step</li>
+			<li><code>q</code> : Stop or Reset</li>
+		</ul>
+	</div>
 </main>
 
 <script src="./chrono.js"></script>

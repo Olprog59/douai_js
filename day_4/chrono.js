@@ -3,6 +3,7 @@ const second = document.querySelector('#chrono span:nth-child(2)');
 const milli = document.querySelector('#chrono span:nth-child(3)');
 
 const btnStart = document.getElementById('btn-start');
+const choiceMilli = document.getElementById('choiceMilli');
 const btnStop = document.getElementById('btn-stop');
 
 const liste = document.querySelector('.liste');
@@ -16,37 +17,42 @@ let interval = 0;
 let isStart = false;
 let isStop = false;
 
-btnStart.addEventListener('click', () => {
+//@ts-ignore
+let intervalMilli = parseInt(choiceMilli.value);
+
+const startInterval = () => {
     if (isStart) {
-        
-        //console.log(countMilli, countSecond, countMinute);
         liste.innerHTML += `<p>${oneToTwo(countMinute)} : ${oneToTwo(countSecond)} . ${oneToTwoMilli(countMilli)}</p>`;
-    
     } else {
+        choiceMilli.setAttribute('disabled', 'true');
         interval = setInterval(()=>{
             if (!isStart) {
                 isStart = true;
             }
-            countMilli += 60;
+            countMilli += intervalMilli;
             logiqueCompteur();
-            // console.log(countMilli, countSecond, countMinute);
             remplissageHtml();
-        }, 60);
-        
+        }, intervalMilli);
+
         btnStart.innerHTML = "Step";
         btnStop.innerHTML = "Stop";
         isStop = false;
     }
-});
+};
 
-btnStop.addEventListener('click', () => {
+const stopInterval = () => {
+    choiceMilli.removeAttribute('disabled');
     if (isStop) {
         milli.innerHTML = "000";
         second.innerHTML = "00";
         minute.innerHTML = "00";
-        
+
+        countMilli = 0;
+        countSecond = 0;
+        countMinute = 0;
+
         liste.innerHTML = "";
-        
+
         btnStop.innerHTML = "Stop";
         btnStart.innerHTML = "Start";
     } else {
@@ -56,6 +62,23 @@ btnStop.addEventListener('click', () => {
         btnStart.innerHTML = "Restart";
         isStop = true;
         btnStop.innerHTML = "Reset";
+    }
+};
+
+btnStart.addEventListener('click', startInterval);
+
+btnStop.addEventListener('click', stopInterval);
+
+choiceMilli.addEventListener('change', (e) => {
+    //@ts-ignore
+    intervalMilli = parseInt(e.target.value);
+});
+
+document.addEventListener('keyup', (e) => {
+    if (e.code === "Space") {
+        startInterval();
+    }else if (e.code === "KeyA"){
+        stopInterval();
     }
 });
 
