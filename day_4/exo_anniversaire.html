@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<form action="">
+  <div>
+    <label for="birthday">Date d'anniversaire</label>
+    <input type="date" name="birthday" id="birthday" onchange="anniversaire(this.form);">
+  </div>
+</form>
+
+<div id="res"></div>
+<script>
+	const res = document.getElementById('res');
+
+	function anniversaire(form) {
+        const birthday = new Date(form.birthday.value);
+        const today = new Date();
+
+        const bMonth = birthday.getMonth();
+        const bDay = birthday.getDate();
+
+        const tMonth = today.getMonth();
+        const tDay = today.getDate();
+
+        let diffMonth = bMonth - tMonth;
+        const diffDay = bDay - tDay;
+
+        if (diffMonth === 0 && diffDay < 0) {
+            diffMonth = 11;
+			res.innerHTML = `<h1>C'est dans plus de ${diffMonth} mois. Tu as le temps. Et bon anniversaire en retard.</h1>`
+        } else if (diffMonth === 0 && diffDay === 0) {
+            res.innerHTML = `<h1>Happy BirthDay</h1>`
+        } else if (diffMonth === 0 && diffDay > 0) {
+            res.innerHTML = `<h1>C'est dans ${diffDay} jours.</h1>`
+        } else if (diffMonth === 1 && diffDay < 0) {
+            res.innerHTML = `<h1>C'est dans moins d'un mois.</h1>`
+        } else if (diffMonth > 0 && diffDay === 0) {
+            res.innerHTML = `<h1>C'est dans ${diffMonth} mois tout juste.</h1>`
+        } else if (diffMonth > 0 && diffDay > 0) {
+            res.innerHTML = `<h1>C'est dans ${diffMonth} mois et dans ${diffDay} jours.</h1>`
+        } else if (diffMonth > 0 && diffDay < 0) {
+            res.innerHTML = `<h1>C'est dans un peu plus d'${diffMonth - 1} mois</h1>`
+        }
+
+    }
+</script>
+</body>
+</html>

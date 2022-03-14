@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		*, ::before, ::after {
+            margin: 0;
+            padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+            background-color: #222;
+			color: #eee;
+			display: flex;
+			justify-content: center;
+		}
+
+		p#chrono {
+            margin: 20px 0;
+            padding: 10px;
+			font-size: 4rem;
+		}
+
+		main {
+            text-align: center;
+		}
+
+		button {
+			border: none;
+			outline: none;
+            width: 140px;
+            height: 40px;
+			font-size: 1.2rem;
+            margin: 0 10px;
+			border-radius: 5px;
+		}
+
+		#btn-start {
+            background-color: #3bc430;
+			color: #D5FFCE
+		}
+
+		#btn-stop {
+            background-color: #f67373;
+			color: #222;
+		}
+
+		.liste {
+            margin: 30px 0;
+            padding: 10px 0;
+            background-color: rgba(255,255,255, 0.2);
+			border:1px solid rgba(255,255,255, 0.2);
+			border-radius: 5px;
+			box-shadow: 2px 2px 20px rgba(255,255,255, 0.12);
+		}
+
+		.liste p {
+            margin: 5px 0;
+            padding: 5px 0;
+			font-size: 1.2rem;
+		}
+		select#choiceMilli {
+			border: none;
+            background-color: #95c6fd;
+			height: 40px;
+			font-size: 1.2rem;
+			border-radius: 5px;
+            margin: 10px;
+            padding: 10px;
+			outline: none;
+		}
+
+		main .btns {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		main .shortcuts ul {
+            padding: 0;
+		}
+
+		main .shortcuts ul li {
+            list-style: none;
+			font-size: 1.2rem;
+            padding: 10px;
+		}
+	</style>
+</head>
+<body>
+<main>
+	<p id="chrono">
+		<span>00</span> :
+		<span>00</span> .
+		<span>000</span>
+	</p>
+	<div class="btns">
+		<button id="btn-stop">Stop</button>
+		<select name="choiceMilli" id="choiceMilli">
+			<option value="63">Rafraichissement bon</option>
+			<option value="100" selected>Rafraichissement moyen</option>
+			<option value="500">Rafraichissement lent</option>
+		</select>
+		<button id="btn-start">Start</button>
+	</div>
+	<div class="liste"></div>
+	<div class="shortcuts">
+		<ul>
+			<li><code>space</code> : Start or Step</li>
+			<li><code>q</code> : Stop or Reset</li>
+		</ul>
+	</div>
+</main>
+
+<script src="./chrono.js"></script>
+</body>
+</html>
