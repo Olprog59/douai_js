@@ -9,15 +9,14 @@ getBeers(10)
                 <h4>${b.name}</h4>
                 <p>${b.description}</p>
                 <figure>
-                    <img src=${b.imageUrl"} "alt="${b.name}">
-            </figure>
-            <p>
-            <span>Premier brassage le : ${b.firstBrewed}</span>
-            <span>Taux d'alcool : ${b.abv}</span>
-            </p>
+                    <img src=${b.imageUrl} alt="${b.name}">
+                </figure>
+                <p>
+                    <span>Premier brassage le : ${b.firstBrewed}</span>
+                    <span>Taux d'alcool : ${b.abv}</span>
+                </p>
             </div>
-            `
-        ;
-                });
-                document.getElementById('beers').innerHTML = html.join("");
-            })
+            `;
+        });
+        document.getElementById('beers').innerHTML = html.join("");
+    })
