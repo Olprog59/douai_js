@@ -1,0 +1,123 @@
+*, ::before, ::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+$color_black_olive: #37392E
+$color_black_olive_op: #37392E77
+$color_blue_sapphire: #19647E
+$color_blue_sapphire_op: #19647E77
+$color_minion_yellow: #EDD83D
+$color_beige: #F3F9E3
+$color_puce: #D8829D
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap')
+
+body
+  background: linear-gradient(-45deg, $color_blue_sapphire 20%, $color_black_olive 80%) fixed
+  color: #fff
+  font-family: 'Kanit', sans-serif
+
+
+  header
+    text-align: center
+    background-color: rgba(255, 255, 255, 0.4)
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.6)
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 1000
+
+    h1
+      padding: 10px
+      width: 100%
+      height: 100%
+      backdrop-filter: blur(15px)
+
+  main
+    position: absolute
+    top: 80px
+    left: 0
+
+    section
+      display: flex
+      justify-content: center
+      align-items: stretch
+      flex-wrap: wrap
+
+      &::before
+        content: ''
+        position: fixed
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        clip-path: circle(25% at 90% 80%)
+        background: linear-gradient(#f00, #f0f)
+        z-index: -1
+
+      &::after
+        content: ''
+        position: fixed
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        background: linear-gradient(#2785ce, #e91e63)
+        clip-path: circle(20% at 10% 20%)
+        z-index: -1
+
+
+      div
+        width: 400px
+        height: auto
+        position: relative
+        overflow: hidden
+        background-color: rgba(255, 255, 255, 0.2)
+        margin: 20px
+        padding: 10px
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2)
+        border: 1px solid rgba(255, 255, 255, 0.2)
+        backdrop-filter: blur(20px)
+
+        h4
+          font-size: 2rem
+          text-align: center
+          border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+          transition: filter 300ms ease-in-out
+
+        figure
+          position: absolute
+          top: 0
+          left: 0
+          z-index: -1
+          width: 100%
+          height: 100%
+          filter: blur(4px)
+          transition: filter 300ms ease-in-out
+
+          img
+            width: 100%
+            height: 100%
+            object-fit: contain
+
+        p
+          padding: 10px
+          transition: filter 300ms ease-in-out
+
+          span
+            display: block
+            text-decoration: underline
+
+        &:hover
+          figure
+            z-index: 10
+            filter: blur(0)
+
+          p
+            filter: blur(2px)
+
+          h4
+            filter: blur(2px)
