@@ -8,6 +8,14 @@ async function getWeatherByCity(city) {
     return resultToWeatherModel(result);
 }
 
+async function getWeatherByCoord(lat, lon) {
+    const url = `https://api.openweathermap.org/data/2.5/weather/?appid=00f5c3ea7e9311dcaf0c0de897590f90&lat=${lat}&lon=${lon}&units=metric&lang=fr`;
+    const response = await fetch(url);
+    const result = await response.json();
+    // console.log(resultToWeatherModel(result));
+    return resultToWeatherModel(result);
+}
+
 function resultToWeatherModel(res) {
     const weather = new WeatherModel();
     weather.city = res['name'];
@@ -25,4 +33,4 @@ function resultToWeatherModel(res) {
     return weather;
 }
 
-export {getWeatherByCity};
+export {getWeatherByCity, getWeatherByCoord};

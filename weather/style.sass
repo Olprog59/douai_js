@@ -1,0 +1,135 @@
+*, ::before, ::after
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+
+body
+  background: #e96443
+  background: -webkit-linear-gradient(45deg, #904e95, #e96443)
+  background: linear-gradient(45deg, #904e95, #e96443)
+  background-attachment: fixed
+
+
+main
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  div.search
+    padding: 10px
+    display: flex
+    align-items: center
+    input
+      height: 50px
+      line-height: 50px
+      font-size: 1.5rem
+      padding: 10px
+      margin: 10px
+      background-color: rgba(255,255,255,0.2)
+      color: white
+      border: 1px solid rgba(255,255,255,0.2)
+      box-shadow: 0 0 25px rgba(255,255,255,0.2)
+      border-radius: 5px
+      text-align: center
+
+      &::placeholder
+        color: white
+        text-align: center
+
+    button
+      margin: 10px
+      height: 50px
+      line-height: 50px
+      font-size: 1.5rem
+      padding: 0 20px
+      background-color: rgba(255,255,255,0.2)
+      color: white
+      border: 1px solid rgba(255,255,255,0.2)
+      box-shadow: 0 0 25px rgba(255,255,255,0.2)
+      border-radius: 5px
+      transition: background-color 200ms, color 200ms, transform 200ms
+
+      &:hover
+        background-color: rgba(255,255,255,0.5)
+        color: #37392E
+        transform: scale(0.98)
+
+  div#weather
+    width: 80%
+    min-width: 400px
+    background-color: rgba(255,255,255,0.2)
+    color: white
+    border: 1px solid rgba(255,255,255,0.2)
+    box-shadow: 0 0 25px rgba(255,255,255,0.2)
+    margin: 10px
+    padding: 10px
+    font-size: 1.5rem
+    text-align: center
+    h1
+      display: flex
+      justify-content: center
+      align-items: center
+
+      & span
+        font-size: 4rem
+    p
+      text-transform: capitalize
+      padding: 10px
+
+      span
+        border-bottom: 1px solid rgba(255,255,255,0.6)
+
+
+    ul
+      list-style: none
+      display: flex
+      justify-content: center
+      align-items: center
+      li
+        padding: 10px
+
+        span
+          border-bottom: 1px solid rgba(255,255,255,0.6)
+
+    div.wind
+      display: inline-flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      position: relative
+      z-index: 10
+
+      div
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 20px
+        transform: translateX(-10px)
+
+        .weather_deg
+          position: relative
+          font-size: 1rem
+
+          &::before
+            content: ''
+            position: absolute
+            z-index: 8
+            top: 49%
+            right: 0
+            left: calc(40% - 50px / 2.5)
+            bottom: 0
+            width: 50px
+            height: 60px
+            background-image: linear-gradient(to top, transparent 10%, blue)
+            transform: translateY(-100%) rotate(var(--degre))
+            transform-origin: bottom center
+            clip-path: polygon( 50% 0%, 40% 100%, 60% 100%)
+
+
+    div.soleil
+      display: flex
+      justify-content: center
+      align-items: center
+

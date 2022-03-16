@@ -1,14 +1,24 @@
-import {getWeatherByCity} from "./weather_service.js";
+import {getWeatherByCity, getWeatherByCoord} from "./weather_service.js";
 
 const weatherDiv = document.getElementById('weather');
 
 const inputSearch = document.getElementById('city');
 const btnSearch = document.getElementById('btn_search');
 
-getWeatherByCity("douai")
-	.then(r => {
-		weatherDiv.innerHTML = toHtml(r);
-	});
+btnSearch.addEventListener('click', () => {
+	let city = inputSearch.value;
+	if (city) {
+		getWeatherByCity(city)
+			.then(r => {
+				weatherDiv.innerHTML = toHtml(r);
+			});
+	}
+});
+
+// getWeatherByCity("casablanca")
+// 	.then(r => {
+// 		weatherDiv.innerHTML = toHtml(r);
+// 	});
 
 function toHtml(w) {
 	return `
@@ -43,3 +53,27 @@ function getTime(time) {
 	const sec = ("0" + time.getSeconds()).slice(-2);
 	return `${hour}:${min}:${sec}`;
 }
+
+// Géolocalisation
+
+const options = {
+	enableHighAccuracy: true,
+	timeout: 5000,
+	maximumAge: 0
+};
+
+function success(pos) {
+	const crd = pos.coords;
+
+	getWeatherByCoord(crd.latitude, crd.longitude)
+		.then(r => {
+			weatherDiv.innerHTML = toHtml(r);
+		})
+}
+
+function error(err) {
+	console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
+
