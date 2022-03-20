@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap')
+
+*, ::before, ::after
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+body
+  background: #12c2e9
+  background: -webkit-linear-gradient(to top, #f64f59, #c471ed, #12c2e9)
+  background: linear-gradient(to top, #f64f59, #c471ed, #12c2e9)
+  background-attachment: fixed
+  font-family: 'Fredoka', sans-serif
+
+  main
+
+    header
+      width: 100%
+
+      h1
+        width: 100%
+        height: 80px
+        line-height: 80px
+        background-color: rgba(255,255,255,0.4)
+        border-bottom: 1px solid rgba(255,255,255,0.4)
+        box-shadow: 0 5px 30px rgba(255,255,255,0.6)
+        text-align: center
+
+  section#users
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+
+    .user
+      position: relative
+      padding: 20px
+      margin: 20px
+      background-color: rgba(255,255,255,0.2)
+      border: 1px solid rgba(255,255,255,0.2)
+      box-shadow: 0 0 20px rgba(255,255,255,0.3)
+      backdrop-filter: blur(10px)
+
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      width: 350px
+      overflow: hidden
+
+      figure
+        width: 150px
+        height: auto
+        img
+          width: 100%
+          height: 100%
+          object-fit: cover
+          object-position: center
+          border-radius: 50%
+      div
+        margin: 10px 0
+        width: 100%
+        &.name
+          text-align: center
+
+        &.name p
+          margin: 5px 0
+
+          &:last-child
+            font-size: 1.2rem
+            padding-bottom: 15px
+            border-bottom: 1px solid rgba(255,255,255,0.5)
+            position: relative
+            &::after
+              content: ''
+              position: absolute
+              bottom: 0
+              left: 50%
+              transform: translateX(-50%)
+              width: 50px
+              height: 15px
+              background-color: rgba(255,255,255,0.4)
+              clip-path: polygon(50% 0%, 30% 100%, 70% 100%)
+
+        &:not(.name) p
+          width: 100%
+          display: flex
+          justify-content: space-between
+          align-items: flex-start
+          margin: 5px 0
+
+          & span
+
+            &:first-child
+              flex-grow: 1
+            &:not(:first-child)
+              flex-grow: 10
+              text-align: right
+        &.hidden
+          position: absolute
+          padding: 5px
+          top: -10px
+          left: 0
+          right: 0
+          bottom: 0
+          width: 100%
+          height: 100%
+          display: flex
+          flex-direction: column
+          justify-content: center
+          background-color: rgba(0,0,0,0.7)
+          border: 1px solid rgba(0,0,0,0.7)
+          box-shadow: 0 0 20px rgba(0,0,0,0.7)
+          backdrop-filter: blur(2px)
+          color: white
+          opacity: 0
+          visibility: hidden
+          transform: translateY(100%)
+          transition: transform 400ms, opacity 300ms, visibility 300ms
+
+      &:hover div.hidden
+        transform: translateY(0)
+        opacity: 1
+        visibility: visible
